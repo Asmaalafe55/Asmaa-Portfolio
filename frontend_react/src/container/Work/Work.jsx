@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
@@ -22,6 +23,7 @@ const Work = () => {
   }, []);
 
   const handleWorkFilter = (item) => {};
+
   return (
     <>
       <h2 className="head-text">
@@ -93,7 +95,7 @@ const Work = () => {
               </p>
 
               <div className="app__work-tag app__flex">
-                <p className="p-text">{work.tag[0]}</p>
+                <p className="p-text">{work.tags[0]}</p>
               </div>
             </div>
           </div>
