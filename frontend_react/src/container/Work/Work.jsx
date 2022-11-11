@@ -117,4 +117,4 @@ const Work = () => {
   );
 };
 
-export default AppWrap('work', 'app__primarybg');
+export default AppWrap(Work, 'work');
