@@ -100,7 +100,7 @@ const Footer = () => {
   );
 };
 
-export default AppWrap(Footer, 'footer');
+export default AppWrap(Footer, 'contact');
 /*
 export default AppWrap(
   MotionWrap(Footer, 'app__footer'),
