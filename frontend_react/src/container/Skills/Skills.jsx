@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ReactTooltip from 'react-tooltip';
@@ -8,28 +7,29 @@ import { urlFor, client } from '../../client';
 import './Skills.scss';
 
 const Skills = () => {
-  const [skills, setSkills] = useState([]);
   const [experiences, setExperiences] = useState([]);
+  const [skills, setSkills] = useState([]);
+
   useEffect(() => {
-    const query = '*[_type == "skills"]';
-    const exQuery = '*[_type == "experiences"]';
+    const query = '*[_type == "experiences"]';
+    const skillsQuery = '*[_type == "skills"]';
 
     client.fetch(query).then((data) => {
-      setSkills(data);
+      setExperiences(data);
     });
 
-    client.fetch(exQuery).then((data) => {
-      setExperiences(data);
+    client.fetch(skillsQuery).then((data) => {
+      setSkills(data);
     });
   }, []);
 
   return (
     <>
-      <h2 className="head-text">Skills & Experience</h2>
+      <h2 className="head-text">Skills & Experiences</h2>
 
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
-          {skills?.map((skill) => (
+          {skills.map((skill) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
@@ -37,7 +37,7 @@ const Skills = () => {
               key={skill.name}
             >
               <div
-                className="app__flex "
+                className="app__flex"
                 style={{ backgroundColor: skill.bgColor }}
               >
                 <img src={urlFor(skill.icon)} alt={skill.name} />
@@ -46,12 +46,10 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
-
-        <motion.div className="app__skills-exp">
-          {console.log(experiences.works)}
+        <div className="app__skills-exp">
           {experiences.map((experience) => (
-            <motion.div className="app-skills-item" key={experience.year}>
-              <div className="app-skills-exp-year">
+            <motion.div className="app__skills-exp-item" key={experience.year}>
+              <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
               </div>
               <motion.div className="app__skills-exp-works">
@@ -60,7 +58,7 @@ const Skills = () => {
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
-                      className="app__skills-exp-work app__flex"
+                      className="app__skills-exp-work"
                       data-tip
                       data-for={work.name}
                       key={work.name}
@@ -81,7 +79,7 @@ const Skills = () => {
               </motion.div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </>
   );
