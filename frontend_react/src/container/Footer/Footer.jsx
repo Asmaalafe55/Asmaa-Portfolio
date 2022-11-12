@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
@@ -101,3 +101,9 @@ const Footer = () => {
 };
 
 export default AppWrap(Footer, 'footer');
+/*
+export default AppWrap(
+  MotionWrap(Footer, 'app__footer'),
+  'contact',
+  'app__whitebg',
+); */

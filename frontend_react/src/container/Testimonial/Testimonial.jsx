@@ -89,3 +89,9 @@ const Testimonial = () => {
 };
 
 export default AppWrap(Testimonial, 'testimonial');
+/*
+export default AppWrap(
+  MotionWrap(Testimonial, 'app__testimonial'),
+  'testimonial',
+  'app__primarybg',
+); */
