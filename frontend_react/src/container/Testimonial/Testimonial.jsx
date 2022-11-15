@@ -30,6 +30,10 @@ const Testimonial = () => {
   const test = testimonials[currentIndex];
   return (
     <>
+      <h2 className="head-text">
+        <span>Testimonials</span>
+      </h2>
+      <br />
       {testimonials.length && (
         <>
           <div className="app__testimonial-item app__flex">

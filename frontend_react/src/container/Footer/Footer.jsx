@@ -39,12 +39,16 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">Take a coffee & chat with me</h2>
+      <h2 className="head-text1">Let's Grab a Coffee and Chat</h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card">
           <img src={images.email} alt="email" />
-          <a href="mailto:asmaalafe55@gmail.com" className="p-text">
+          <a
+            href="mailto:asmaalafe55@gmail.co
+          m"
+            className="p-text"
+          >
             asmaalafe55@gmail.com
           </a>
         </div>
@@ -96,6 +100,11 @@ const Footer = () => {
           <h3 className="head-text">Thank you for getting in touch!</h3>
         </div>
       )}
+
+      <div className="copyright">
+        <p className="p-text">@2022 ASMAA</p>
+        <p className="p-text">All rights reserved</p>
+      </div>
     </>
   );
 };
